@@ -1,0 +1,22 @@
+{
+  "name": "PGTabBar",
+  "version": "0.1.0",
+  "summary": "A short description of PGTabBar.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/damon.park/PGTabBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "damon.park": "damon.park@kakaocorp.com"
+  },
+  "source": {
+    "git": "https://github.com/damon.park/PGTabBar.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "PGTabBar/Classes/**/*"
+}

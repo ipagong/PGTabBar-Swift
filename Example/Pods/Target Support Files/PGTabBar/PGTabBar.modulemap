@@ -1,0 +1,6 @@
+framework module PGTabBar {
+  umbrella header "PGTabBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

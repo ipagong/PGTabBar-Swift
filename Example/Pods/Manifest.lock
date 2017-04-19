@@ -1,0 +1,23 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - PGTabBar (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - PGTabBar (from `../`)
+
+EXTERNAL SOURCES:
+  PGTabBar:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  PGTabBar: d7c9c7a229541ca8d133a14296567ec85c93fce3
+
+PODFILE CHECKSUM: d8f0a1dfd553ab0994e1b0c169c6359c6c94aa1c
+
+COCOAPODS: 1.2.1
