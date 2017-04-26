@@ -22,7 +22,7 @@ pod "PGTabBar"
 
 ## Author
 
-damon.park, damon.park@kakaocorp.com
+iPagong, ipagong.dev@gmail.com
 
 ## License
 
