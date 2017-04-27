@@ -75,4 +75,8 @@ public struct TabStateElement<Element:Any> {
     }
 }
 
+extension NSInteger {
+    func indexPath(_ section:NSInteger? = 0) -> IndexPath { return IndexPath(row: self, section: section!) }
+}
+
 

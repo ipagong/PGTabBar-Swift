@@ -9,7 +9,7 @@
 import UIKit
 import PGTabBar
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, TabContainerDelegate {
     
     @IBOutlet weak var tabContainer: TabContainer!
 
@@ -17,26 +17,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         tabContainer.option.bounces = true
+        tabContainer.indicator = TabIndicator()
+        tabContainer.delegate = self
         
-        tabContainer.option.fitable = true
-        //        TabContainer.option.fitable = false
+//        tabContainer.option.aspect = .minimum // .fitable
         
         var tabList = [TabItem]()
         
-        tabList.append(TabItem(title: TabText.title("A").attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("AAAAA").attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("B").attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("BB").attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("BBBBB").attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("C").attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("CCC").attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("CCCCC").attrText, cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("YouTube").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
+//        tabList.append(TabItem(title: TabText.title("Facebook").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
+//        tabList.append(TabItem(title: TabText.title("Instagram").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("Twitch").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("Pinterest").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
 
         tabContainer.tabList = tabList
         
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.tabContainer.setNeedsUpdateConstraints()
+    }
+
+//    func indexWithTabContainer(_ container:TabContainer) -> NSInteger? {
+//        return 0
+//    }
+    
+//    func didSelectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol) {
+//        
+//    }
+//    
+//    func didDeselectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol) {
+//        
+//    }
 
 }
+
+
 
 class MyTabCell: TabCell {
     

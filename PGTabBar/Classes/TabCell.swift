@@ -10,7 +10,11 @@ import UIKit
 
 open class TabCell: UICollectionViewCell, TabCellProtocol {
     
+    public weak var option: TabContainer.TabOption?
+    
+    public var tabIcon: UIImage?
     public var tabTextLabel: UILabel { return self.tabLabel }
+    public var tabOverlayView: TabStateElement<UIView>?
     
     private var innerConstraints:[NSLayoutConstraint]?
     
@@ -26,6 +30,7 @@ open class TabCell: UICollectionViewCell, TabCellProtocol {
     
     lazy var tabLabel:UILabel = {
         let label = UILabel(frame: self.bounds)
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         return label
     }()
@@ -47,5 +52,6 @@ extension TabCell {
     public func setup() {
         backgroundColor = .white
         contentView.addSubview(tabLabel)
+        updateTabCell()
     }
 }

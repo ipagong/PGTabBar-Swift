@@ -10,38 +10,39 @@
 		051A816D6DD0CAE13496DDCFE0829167 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		094973D2D2F1E3B2E772F93C8147C6B9 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EECE81A9AEC1ED1057A9C3C88DBCEBE /* UIApplication+StrictKeyWindow.m */; };
 		0973C2B35148ED511DEFB59B050883D4 /* Pods-PGTabBar_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5796D59FC440FD1D32F6003072C236 /* Pods-PGTabBar_Tests-dummy.m */; };
+		12DEFDD863F97666CE27CEB174E5633C /* TabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E8A8E538A6A9F566DDBAB3CB885F42 /* TabCell.swift */; };
 		1AB7934C16CE49DE196FFC7BE7278287 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97545C39C4A5EE2631DD9FFECE76A40 /* SwiftSupport.swift */; };
 		2304E152DB35CBE59DC0C65F940AAF35 /* Pods-PGTabBar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A3EB4554EDABE38DEA2B56158C674 /* Pods-PGTabBar_Example-dummy.m */; };
 		2F485B69F51E4F723A38410F31F08550 /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1374B79237CAC07693E99442FBED1F15 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35DD05FD595A6FE7F5A0692D12E319DC /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CEF7D6C5E08AB80E58DABC75D882BC /* UIImage+Diff.m */; };
-		37281176731357ACE6E496763F187023 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */; };
 		3CBFD5B77D3FBB78EA0D98790AFD0D59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */; };
+		405B5C4C90E078EB6A6977EE5529EA62 /* TabProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBFA804EE119C9E36B991826A12E75 /* TabProtocol.swift */; };
 		421CDD701AEE0F2458A84200366CDD0F /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B161931541BFE46DFEA2092EDDDA815 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		506D761F91EC3583789A837C559972FE /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C18C0EB1FED5EB5CE3B0E768AC510F /* FBSnapshotTestCase-dummy.m */; };
+		5CAE840D72A32DA84F3D96C517749F68 /* PGTabBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EB78F3ACD4AA36844D0FC526A26FC /* PGTabBar-dummy.m */; };
+		667FE96A9E56C991768FFF010850CD20 /* TabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F7E0982DFA4DC198F354B3600FE5AE /* TabOption.swift */; };
 		69DA8B003216466C60F029CBD79897F1 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E22F9517F21D3A0251F88FCAB281E /* UIImage+Compare.m */; };
 		756564ABAF2892FE7140C92A1CDDCF65 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBFBDCC891B770A2AC9EF0FB164B751 /* UIImage+Snapshot.m */; };
-		781B0F8C25C9515989A1A41AAFBB5C32 /* TabAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4F60F0B8BC286E74A778E27A7D5B8 /* TabAppearance.swift */; };
-		7A2CF75CEF86DE6B244EDB70343D8300 /* TabContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A6C5E7D548C5F52F7B5F39C5F8C75 /* TabContainer.swift */; };
 		7E9B14D5F8842A86CA86F2AF45230725 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8F339250A1C3C5C5C5364254007103 /* XCTest.framework */; };
 		841FF232C33C7D49C58CEFDBE7EEB92B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA323C90663942983643D7A4D1F697C8 /* UIKit.framework */; };
+		85463950F41ECEA570B6FF82F40605F4 /* TabUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2AFA9A8B837F3BED436A5B308681D /* TabUtils.swift */; };
+		85D29F0C519DF3DEF771F155DFB9E76A /* PGTabBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1D5A2694F571EFE0D28744900597536 /* PGTabBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F7386E93BC35D57D4CD3C049D7A58E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */; };
 		91D0138ACFAD733E4061F12E450C336C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */; };
-		927AD8DC560E10262F3349575D2126B3 /* TabUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8CC15FD45A5DC667D417743043394 /* TabUtils.swift */; };
+		96434E1323AEF5A69DD46B25F4D093D3 /* TabContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A704BC0BE0F414C7C7666A9ABE29F9 /* TabContainer.swift */; };
 		9673CF780F48C8E4EC2A331717B1F67C /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = E37899BD4B349060AA147E2A3721D3A2 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96DD176CB72881E92727FA6E01678024 /* Pods-PGTabBar_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A25514FE3C96E1C904D33343BF35D6 /* Pods-PGTabBar_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9CCACCC4BC65C830D984E667B023E698 /* TabProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A34DF24906C9E6781E3D5469CA713 /* TabProtocol.swift */; };
+		9E785EBFAF7A8D34CE3A1F2A524A6C19 /* TabIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F26AD7DCA216446BA3681E08C28DB6 /* TabIndicator.swift */; };
 		A4F69F3477A935285620AC3031C5C848 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 052258A488A96C35531FAC73C4F42924 /* FBSnapshotTestController.m */; };
 		B27DFD6025D94758785918F1D6F6C060 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A27810809BAD71E4022600B21251449F /* QuartzCore.framework */; };
-		B557C912E5CEF5EDF141D8AFF797C8AD /* PGTabBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7EB78F3ACD4AA36844D0FC526A26FC /* PGTabBar-dummy.m */; };
 		B758FB09FE2C06C1B8E36A71A9D76D41 /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D037B3C804B9E1BB70538E342E5104 /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC952FC04FC963C1294DCD619C9B6B3B /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BE14F2198CDB0DAD98A567981D21C7A1 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */; };
 		BFCE460CC33E8872B7156D4166340178 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E3DB4D092B985E76E227F7F313C6981 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C15EA060B871ECDAF3BF3101E786E526 /* Pods-PGTabBar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 668EF1ECB08F2B5F4D5A390A527294B0 /* Pods-PGTabBar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C87AB989E3EF58AD69CB6BD128E3090B /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5993F3AE295E27D2DAF3894853F08470 /* TabItem.swift */; };
 		CAFA5E486BCE117A7D8C0FBF9DA6666B /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 432938111B6FF0189EFFEDF2F845B308 /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CF6AEEA763825E54E7BE652517C9CDE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */; };
-		DA60D7C68F95724FE806A4B3DB50BB86 /* PGTabBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1D5A2694F571EFE0D28744900597536 /* PGTabBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA98904C58BCCCBA1A142EBE8C544F3B /* TabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1D63CE100E5377FE4A0454A92E0368 /* TabCell.swift */; };
+		D2CAB41377EE2E727B96E598981D58E8 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBD332406D6BFFB27202C3419288CBD /* TabItem.swift */; };
 		DB7A106243AC974FC7EBEB00B506C786 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2557E7CE20AACCD1B28B1CD1F920D /* FBSnapshotTestCasePlatform.m */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +58,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7CF82F436011C5AB46CDD13F73DC4943;
+			remoteGlobalIDString = 7F7516996F90C6FD08300EE3FFF7CA21;
 			remoteInfo = PGTabBar;
 		};
 /* End PBXContainerItemProxy section */
@@ -68,13 +69,10 @@
 		08251CF59DB0917521046E40F706E919 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B161931541BFE46DFEA2092EDDDA815 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
 		0D9646667D98F8E58F167FB8278AAB53 /* Pods-PGTabBar_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PGTabBar_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0F1D63CE100E5377FE4A0454A92E0368 /* TabCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabCell.swift; sourceTree = "<group>"; };
 		0F7EB78F3ACD4AA36844D0FC526A26FC /* PGTabBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGTabBar-dummy.m"; sourceTree = "<group>"; };
 		1374B79237CAC07693E99442FBED1F15 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
-		17EABCCFEB53E88AA5B4AE8D5990B38E /* Pods-PGTabBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PGTabBar_Tests.modulemap"; sourceTree = "<group>"; };
-		1E7A6C5E7D548C5F52F7B5F39C5F8C75 /* TabContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabContainer.swift; sourceTree = "<group>"; };
+		17EABCCFEB53E88AA5B4AE8D5990B38E /* Pods-PGTabBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PGTabBar_Tests.modulemap"; sourceTree = "<group>"; };
 		1EAA586E7BE273A7A37EC4DBCF34C505 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29A8CC15FD45A5DC667D417743043394 /* TabUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabUtils.swift; sourceTree = "<group>"; };
 		2EECE81A9AEC1ED1057A9C3C88DBCEBE /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
 		39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
 		3A8F339250A1C3C5C5C5364254007103 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -84,8 +82,7 @@
 		52C18C0EB1FED5EB5CE3B0E768AC510F /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
 		55C7B2D7C393D7A679EBC7CDF73E55BC /* PGTabBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGTabBar-prefix.pch"; sourceTree = "<group>"; };
 		58A2557E7CE20AACCD1B28B1CD1F920D /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
-		58A889116391707C4C8F2C3514CBEA63 /* PGTabBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PGTabBar.framework; path = PGTabBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5993F3AE295E27D2DAF3894853F08470 /* TabItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		58A889116391707C4C8F2C3514CBEA63 /* PGTabBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PGTabBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A416391FF997521FFE49153C2357BB /* Pods-PGTabBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGTabBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		668EF1ECB08F2B5F4D5A390A527294B0 /* Pods-PGTabBar_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PGTabBar_Example-umbrella.h"; sourceTree = "<group>"; };
 		673D0CD6573C027DD1FEC3486D0058F0 /* Pods-PGTabBar_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PGTabBar_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -93,38 +90,43 @@
 		73D037B3C804B9E1BB70538E342E5104 /* FBSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
 		7481DC23F1A1153FAE6C096CFF9E41A7 /* Pods-PGTabBar_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PGTabBar_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		7E3DB4D092B985E76E227F7F313C6981 /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
-		823558E8AC8EB39D028DB5FBBEA227A3 /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
+		7FF2AFA9A8B837F3BED436A5B308681D /* TabUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabUtils.swift; sourceTree = "<group>"; };
+		823558E8AC8EB39D028DB5FBBEA227A3 /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
 		85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		86A25514FE3C96E1C904D33343BF35D6 /* Pods-PGTabBar_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PGTabBar_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9370C19FE67591AA9072B9E5C8E7A619 /* Pods_PGTabBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PGTabBar_Tests.framework; path = "Pods-PGTabBar_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9370C19FE67591AA9072B9E5C8E7A619 /* Pods_PGTabBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PGTabBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AF2B62CE7D8A0DCD3927B63755ADC78 /* PGTabBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGTabBar.xcconfig; sourceTree = "<group>"; };
 		9C2A3EB4554EDABE38DEA2B56158C674 /* Pods-PGTabBar_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PGTabBar_Example-dummy.m"; sourceTree = "<group>"; };
+		A1F7E0982DFA4DC198F354B3600FE5AE /* TabOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabOption.swift; sourceTree = "<group>"; };
 		A27810809BAD71E4022600B21251449F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		A2B59EEEC2491468A9B07754644712B4 /* Pods-PGTabBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGTabBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A3E8A8E538A6A9F566DDBAB3CB885F42 /* TabCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabCell.swift; sourceTree = "<group>"; };
 		AA323C90663942983643D7A4D1F697C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AB6D780F5489AF96E10B54E3219943E4 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB6D780F5489AF96E10B54E3219943E4 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5796D59FC440FD1D32F6003072C236 /* Pods-PGTabBar_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PGTabBar_Tests-dummy.m"; sourceTree = "<group>"; };
 		B1D5A2694F571EFE0D28744900597536 /* PGTabBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGTabBar-umbrella.h"; sourceTree = "<group>"; };
 		B800B75DBE24C96F79C82DF14AFA318A /* Pods-PGTabBar_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PGTabBar_Example-frameworks.sh"; sourceTree = "<group>"; };
+		B8A704BC0BE0F414C7C7666A9ABE29F9 /* TabContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabContainer.swift; sourceTree = "<group>"; };
 		B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
 		B9CEF7D6C5E08AB80E58DABC75D882BC /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
 		C68B82E2A849B4C21292DAB30951C1C2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6E88A450A84E3957158B3B3459740AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C77021D678FA6A24F138498C9703FEA0 /* Pods-PGTabBar_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PGTabBar_Tests-resources.sh"; sourceTree = "<group>"; };
-		C809EA04CD4D3C15913A6B2BABF8B6BD /* Pods_PGTabBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PGTabBar_Example.framework; path = "Pods-PGTabBar_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C809EA04CD4D3C15913A6B2BABF8B6BD /* Pods_PGTabBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PGTabBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA53D19B4275B84765CAE7171724BD14 /* Pods-PGTabBar_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGTabBar_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		CC12BCFA3FC0B8C307F5B38C673EDD12 /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
-		D112B53D02D681C9209B0EF9145BC1D8 /* Pods-PGTabBar_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PGTabBar_Example.modulemap"; sourceTree = "<group>"; };
+		CEBBFA804EE119C9E36B991826A12E75 /* TabProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabProtocol.swift; sourceTree = "<group>"; };
+		D112B53D02D681C9209B0EF9145BC1D8 /* Pods-PGTabBar_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PGTabBar_Example.modulemap"; sourceTree = "<group>"; };
+		D3F26AD7DCA216446BA3681E08C28DB6 /* TabIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabIndicator.swift; sourceTree = "<group>"; };
 		D97545C39C4A5EE2631DD9FFECE76A40 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
 		DADAF30F2D84FDAAD2ADD2D50C1F40DF /* FBSnapshotTestCase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.xcconfig; sourceTree = "<group>"; };
-		DD0A34DF24906C9E6781E3D5469CA713 /* TabProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabProtocol.swift; sourceTree = "<group>"; };
 		E22597C89C7EEC0713BCC9C6A4468A90 /* Pods-PGTabBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGTabBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E37899BD4B349060AA147E2A3721D3A2 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 		E4B3EFC26BD9D2C2406000F5D76958CF /* Pods-PGTabBar_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PGTabBar_Example-resources.sh"; sourceTree = "<group>"; };
-		F4ACACFAB2CCF5B87F398686B3D4B45F /* PGTabBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PGTabBar.modulemap; sourceTree = "<group>"; };
+		EBBD332406D6BFFB27202C3419288CBD /* TabItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		F4ACACFAB2CCF5B87F398686B3D4B45F /* PGTabBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PGTabBar.modulemap; sourceTree = "<group>"; };
 		FA61B2953747ACC62ECE3FEDE8BFD765 /* Pods-PGTabBar_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGTabBar_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		FFE4F60F0B8BC286E74A778E27A7D5B8 /* TabAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabAppearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,19 +141,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		652BE85501B91CF9CBFC2E5A54876639 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F7386E93BC35D57D4CD3C049D7A58E4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71D7BA3BDA7532A84174154C99248552 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CF6AEEA763825E54E7BE652517C9CDE4 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBE3940DF0594F6385AFE7747D83CAC2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37281176731357ACE6E496763F187023 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +168,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		073B508EB7D143A683702A77D5DEB0C3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A3E8A8E538A6A9F566DDBAB3CB885F42 /* TabCell.swift */,
+				EBBD332406D6BFFB27202C3419288CBD /* TabItem.swift */,
+				D3F26AD7DCA216446BA3681E08C28DB6 /* TabIndicator.swift */,
+				B8A704BC0BE0F414C7C7666A9ABE29F9 /* TabContainer.swift */,
+				A1F7E0982DFA4DC198F354B3600FE5AE /* TabOption.swift */,
+				CEBBFA804EE119C9E36B991826A12E75 /* TabProtocol.swift */,
+				7FF2AFA9A8B837F3BED436A5B308681D /* TabUtils.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +211,6 @@
 				1549F91FCD089822594C1F5DB8AB9E8F /* Support Files */,
 				99E46DD4AB2256791F111C718CB0EEF8 /* SwiftSupport */,
 			);
-			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
 			sourceTree = "<group>";
 		};
@@ -223,20 +238,6 @@
 				DF6A3BE5B154F4A5BA853ACBF49B26CD /* PGTabBar */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		3A94577AEA89E7110765FA4F1285977A /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FFE4F60F0B8BC286E74A778E27A7D5B8 /* TabAppearance.swift */,
-				0F1D63CE100E5377FE4A0454A92E0368 /* TabCell.swift */,
-				1E7A6C5E7D548C5F52F7B5F39C5F8C75 /* TabContainer.swift */,
-				5993F3AE295E27D2DAF3894853F08470 /* TabItem.swift */,
-				DD0A34DF24906C9E6781E3D5469CA713 /* TabProtocol.swift */,
-				29A8CC15FD45A5DC667D417743043394 /* TabUtils.swift */,
-			);
-			name = Classes;
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		3B29A950634525D30178E08D389CA004 /* Pods-PGTabBar_Example */ = {
@@ -325,7 +326,7 @@
 		DF6A3BE5B154F4A5BA853ACBF49B26CD /* PGTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				F4B846A2355506A04E157B46153FBB00 /* PGTabBar */,
+				FE2F04F1DEDB60AA82E922C797223478 /* PGTabBar */,
 				7FE6FA3627F315143EA8BD44CD5A2221 /* Support Files */,
 			);
 			name = PGTabBar;
@@ -353,15 +354,6 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		F4B846A2355506A04E157B46153FBB00 /* PGTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				3A94577AEA89E7110765FA4F1285977A /* Classes */,
-			);
-			name = PGTabBar;
-			path = PGTabBar;
-			sourceTree = "<group>";
-		};
 		FBD2D672921284E66F309CA3462F84D6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,14 +362,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE2F04F1DEDB60AA82E922C797223478 /* PGTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				073B508EB7D143A683702A77D5DEB0C3 /* Classes */,
+			);
+			path = PGTabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7F6C490A3F0A1ABFC2A5EB40504A7DC9 /* Headers */ = {
+		26C3AD164F893FF68F7ECECBFCC1E82C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA60D7C68F95724FE806A4B3DB50BB86 /* PGTabBar-umbrella.h in Headers */,
+				85D29F0C519DF3DEF771F155DFB9E76A /* PGTabBar-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,13 +432,13 @@
 			productReference = AB6D780F5489AF96E10B54E3219943E4 /* FBSnapshotTestCase.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7CF82F436011C5AB46CDD13F73DC4943 /* PGTabBar */ = {
+		7F7516996F90C6FD08300EE3FFF7CA21 /* PGTabBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DF94F697A077088E874C8F9775C1368 /* Build configuration list for PBXNativeTarget "PGTabBar" */;
+			buildConfigurationList = EC8CEC744650CB7D29E53F761854005E /* Build configuration list for PBXNativeTarget "PGTabBar" */;
 			buildPhases = (
-				ABB9FEB80D821D23C316BED81C42F59D /* Sources */,
-				CBE3940DF0594F6385AFE7747D83CAC2 /* Frameworks */,
-				7F6C490A3F0A1ABFC2A5EB40504A7DC9 /* Headers */,
+				BA09FD147CCEB0FEA6EE4DAA516B19A2 /* Sources */,
+				652BE85501B91CF9CBFC2E5A54876639 /* Frameworks */,
+				26C3AD164F893FF68F7ECECBFCC1E82C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -507,7 +507,7 @@
 			projectRoot = "";
 			targets = (
 				34CD2E3428AB802BACA62286FF5074B1 /* FBSnapshotTestCase */,
-				7CF82F436011C5AB46CDD13F73DC4943 /* PGTabBar */,
+				7F7516996F90C6FD08300EE3FFF7CA21 /* PGTabBar */,
 				FA25A2A595410E2BCBA28F9B09F4647E /* Pods-PGTabBar_Example */,
 				BF300FFBD52C7AE575D8EBF8E9340A25 /* Pods-PGTabBar_Tests */,
 			);
@@ -523,17 +523,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABB9FEB80D821D23C316BED81C42F59D /* Sources */ = {
+		BA09FD147CCEB0FEA6EE4DAA516B19A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B557C912E5CEF5EDF141D8AFF797C8AD /* PGTabBar-dummy.m in Sources */,
-				781B0F8C25C9515989A1A41AAFBB5C32 /* TabAppearance.swift in Sources */,
-				DA98904C58BCCCBA1A142EBE8C544F3B /* TabCell.swift in Sources */,
-				7A2CF75CEF86DE6B244EDB70343D8300 /* TabContainer.swift in Sources */,
-				C87AB989E3EF58AD69CB6BD128E3090B /* TabItem.swift in Sources */,
-				9CCACCC4BC65C830D984E667B023E698 /* TabProtocol.swift in Sources */,
-				927AD8DC560E10262F3349575D2126B3 /* TabUtils.swift in Sources */,
+				5CAE840D72A32DA84F3D96C517749F68 /* PGTabBar-dummy.m in Sources */,
+				12DEFDD863F97666CE27CEB174E5633C /* TabCell.swift in Sources */,
+				96434E1323AEF5A69DD46B25F4D093D3 /* TabContainer.swift in Sources */,
+				9E785EBFAF7A8D34CE3A1F2A524A6C19 /* TabIndicator.swift in Sources */,
+				D2CAB41377EE2E727B96E598981D58E8 /* TabItem.swift in Sources */,
+				667FE96A9E56C991768FFF010850CD20 /* TabOption.swift in Sources */,
+				405B5C4C90E078EB6A6977EE5529EA62 /* TabProtocol.swift in Sources */,
+				85463950F41ECEA570B6FF82F40605F4 /* TabUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +574,7 @@
 		B89366BFD4EBB254596CFBB1CDB8021B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PGTabBar;
-			target = 7CF82F436011C5AB46CDD13F73DC4943 /* PGTabBar */;
+			target = 7F7516996F90C6FD08300EE3FFF7CA21 /* PGTabBar */;
 			targetProxy = 696CA6952E71A332E5A5558F65CF28D6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -749,6 +750,41 @@
 			};
 			name = Release;
 		};
+		85C16C8441B56B751D7B526D505295A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AF2B62CE7D8A0DCD3927B63755ADC78 /* PGTabBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PGTabBar/PGTabBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PGTabBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PGTabBar/PGTabBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PGTabBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		8A496D6838B39798931BB0C3F7056C64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A2B59EEEC2491468A9B07754644712B4 /* Pods-PGTabBar_Tests.release.xcconfig */;
@@ -787,7 +823,7 @@
 			};
 			name = Release;
 		};
-		A857F541AAC116D599C0F5B0C60FF0E3 /* Release */ = {
+		92C5DDAE92B2F4A4D3A6198A61FCC089 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AF2B62CE7D8A0DCD3927B63755ADC78 /* PGTabBar.xcconfig */;
 			buildSettings = {
@@ -845,41 +881,6 @@
 				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = FBSnapshotTestCase;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EE3AD941676E5E3ECB66AE4540BDE6C8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AF2B62CE7D8A0DCD3927B63755ADC78 /* PGTabBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PGTabBar/PGTabBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PGTabBar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PGTabBar/PGTabBar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PGTabBar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -984,20 +985,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DF94F697A077088E874C8F9775C1368 /* Build configuration list for PBXNativeTarget "PGTabBar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EE3AD941676E5E3ECB66AE4540BDE6C8 /* Debug */,
-				A857F541AAC116D599C0F5B0C60FF0E3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C09D263F34FC12F745377579B522ADDA /* Build configuration list for PBXNativeTarget "Pods-PGTabBar_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6234408F8FFE6DF8050FA9D6D930C2CF /* Debug */,
 				F42C7A139AC3515B29B348BA4DF01DF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC8CEC744650CB7D29E53F761854005E /* Build configuration list for PBXNativeTarget "PGTabBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C16C8441B56B751D7B526D505295A2 /* Debug */,
+				92C5DDAE92B2F4A4D3A6198A61FCC089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
