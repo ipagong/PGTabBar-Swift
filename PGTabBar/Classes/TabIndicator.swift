@@ -10,30 +10,31 @@ import Foundation
 
 open class TabIndicator:UIView, TabIndicatorProtocol {
     
-    public weak var option: TabContainer.TabOption?
-
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.updateTabIndicator()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.updateTabIndicator()
     }
-
+    
     //MARK: - TabIndicatorProtocol
+    public weak var container: TabContainer?
     
     public var selectedIndex:NSInteger = NSNotFound
     
     public func moveTo(cell:UICollectionViewCell, layout:UICollectionViewLayoutAttributes, item:TabItemProtocol, animated:Bool = false) {
+
+        if self.superview == nil {
+            cell.superview?.addSubview(self)
+        }
         
-        cell.superview?.addSubview(self)
-        
-        UIView.animate(withDuration: (animated ? 0.3 : 0)) { _ in self.frame = layout.frame }
+        UIView.animate(withDuration: 0.3) {
+            self.frame = CGRect(x: layout.frame.origin.x + 4, y: layout.frame.height - 15, width: layout.frame.width - 8, height: 2)
+        }
     }
     
     public func updateTabIndicator() {
-        backgroundColor = .yellow
+        self.backgroundColor = .red
     }
 }

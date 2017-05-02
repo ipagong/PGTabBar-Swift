@@ -14,7 +14,7 @@ public class TabContainer: UIView {
     
     public var option:TabOption = TabOption()
     public var indicator:TabIndicatorProtocol? {
-        didSet{ indicator?.option = option }
+        didSet{ indicator?.container = self }
     }
     
     public var currentIndex:NSInteger { return indicator?.selectedIndex ?? NSNotFound }
@@ -27,6 +27,11 @@ public class TabContainer: UIView {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setupContainer()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        self.reloadData(animated: false)
     }
     
     fileprivate lazy var collectionView:UICollectionView = {
@@ -71,6 +76,7 @@ public class TabContainer: UIView {
 extension TabContainer: UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         guard let item = self.validTabList?[indexPath.row] else { return }
         guard let cell = collectionView.cellForItem(at: indexPath), let tabCell = cell as? TabCellProtocol else { return }
         
@@ -79,19 +85,26 @@ extension TabContainer: UICollectionViewDelegate {
         
         guard let layout = collectionView.layoutAttributesForItem(at: indexPath) else { return }
         
+        tabCell.updateTabCell(item)
+        
         self.indicator?.selectedIndex = indexPath.row
+        self.indicator?.updateTabIndicator()
         self.indicator?.moveTo(cell:cell, layout: layout, item: item, animated:true)
     }
     
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
         guard let item = self.validTabList?[indexPath.row] else { return }
         guard let cell = collectionView.cellForItem(at: indexPath), let tabCell = cell as? TabCellProtocol else { return }
+        
+        tabCell.updateTabCell(item)
         
         delegate?.didDeselectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
     }
 }
 
 extension TabContainer: UICollectionViewDataSource {
+    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return validTabList?.count ?? 0
     }
@@ -102,9 +115,8 @@ extension TabContainer: UICollectionViewDataSource {
         let tabCell = collectionView.dequeueReusableCell(withReuseIdentifier: item.tabIdentifier, for: indexPath) as UICollectionViewCell
         
         if var tabType = tabCell as? TabCellProtocol {
-            tabType.option = option
-            tabType.tabTextLabel.attributedText = item.tabTitle
-            tabType.updateTabCell()
+            tabType.container = self
+            tabType.updateTabCell(item)
         }
         
         return tabCell
@@ -112,18 +124,16 @@ extension TabContainer: UICollectionViewDataSource {
 }
 
 extension TabContainer: UICollectionViewDelegateFlowLayout {
+    
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let item = self.validTabList?[indexPath.row] else { return .zero }
         
-        guard option.aspect == .fitable else { return CGSize(width: item.expectedWidth, height: self.bounds.height) }
+        switch option.aspect {
+        case .fitable: return fitableItemSize(item)
+        case .equalbe: return equalbeItemSize(item)
+        case .minimum: return expectItemSize(item)
+        }
         
-        let extraWidth:CGFloat = (self.bounds.width - self.tabTotalWidth)
-        
-        guard extraWidth > 0 else { return CGSize(width: item.expectedWidth, height: self.bounds.height) }
-        
-        let extra = (extraWidth / CGFloat(self.validTabList!.count))
-        
-        return CGSize(width: item.expectedWidth + extra, height: self.bounds.height)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -144,7 +154,7 @@ extension TabContainer {
         self.setupConstraints()
         
         option.collectionView = collectionView
-        indicator?.option = option
+        indicator?.container = self
     }
     
     fileprivate func setupConstraints() {
@@ -156,16 +166,27 @@ extension TabContainer {
         addConstraints([top!, bottom!, leading!, trailing!])
     }
     
-    public override func updateConstraints() {
-        super.updateConstraints()
-        self.reloadData(animated: false)
+    fileprivate func fitableItemSize(_ item: TabItemProtocol) -> CGSize {
+        
+        let extraWidth:CGFloat = (self.bounds.width - self.tabTotalWidth - (CGFloat(self.validTabList!.count) * self.option.interItemSpacing))
+        
+        guard extraWidth > 0 else {
+            return CGSize(width: floor(item.expectedWidth), height: self.bounds.height)
+        }
+        
+        let extra = (extraWidth / CGFloat(self.validTabList!.count))
+        
+        return CGSize(width: item.expectedWidth + extra, height: self.bounds.height)
     }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        self.reloadData(animated: false)
+    fileprivate func equalbeItemSize(_ item: TabItemProtocol) -> CGSize {
+        let width = self.validTabList!.reduce(0.0, { max($0, floor($1.expectedWidth)) })
+        return CGSize(width: width, height: self.bounds.height)
     }
     
+    fileprivate func expectItemSize(_ item: TabItemProtocol) -> CGSize {
+        return CGSize(width: floor(item.expectedWidth), height: self.bounds.height)
+    }
 }
 
 //:MARK - public methods
@@ -180,24 +201,18 @@ extension TabContainer {
         
         let reloadIndex = (self.indicator?.selectedIndex == NSNotFound ? self.preferredIndex : self.indicator?.selectedIndex)
         
-        self.collectionView.performBatchUpdates({ self.collectionView.reloadData() }) { _ in self.selectAt(reloadIndex!, animated: animated!) }
+        self.indicator?.selectedIndex = reloadIndex!
+        
+        self.collectionView.performBatchUpdates({ self.collectionView.reloadData() }) { _ in
+            self.selectAt(reloadIndex!, animated: animated!)
+        }
     }
     
     public func selectAt(_ index:NSInteger, animated:Bool? = true) {
-        guard let _ = validTabList, validTabList!.count > 0  else { return }
         
-        let indexRow = max(min(self.validTabList!.count - 1, index), 0)
-        
-        guard let item = validTabList?[indexRow] else { return }
-        
-        let indexPath = indexRow.indexPath()
-        
-        guard let layout = collectionView.layoutAttributesForItem(at: indexPath) else { return }
-        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
-        
-        self.indicator?.selectedIndex = indexPath.row
-        self.indicator?.moveTo(cell:cell, layout: layout, item: item , animated:animated!)
-        
+        self.collectionView.selectItem(at: index.indexPath(), animated: animated!, scrollPosition: .centeredHorizontally)
+        self.collectionView.delegate?.collectionView!(collectionView, didSelectItemAt: index.indexPath())
+
     }
 }
 

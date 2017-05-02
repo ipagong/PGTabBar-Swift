@@ -61,22 +61,32 @@ public struct TabStateElement<Element:Any> {
     var disabled:Element?
     
     public init(common:Element) {
-        self.normal = common
-        self.selected = common
+        self.normal      = common
+        self.selected    = common
         self.highlighted = common
-        self.disabled = common
+        self.disabled    = common
     }
     
     public init(normal:Element, selected:Element, highlighted:Element, disabled:Element) {
-        self.normal = normal
-        self.selected = selected
+        self.normal      = normal
+        self.selected    = selected
         self.highlighted = highlighted
-        self.disabled = disabled
+        self.disabled    = disabled
     }
 }
 
 extension NSInteger {
     func indexPath(_ section:NSInteger? = 0) -> IndexPath { return IndexPath(row: self, section: section!) }
+}
+
+extension UIView {
+    func tabMaskImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0)
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        let snapshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return snapshotImage
+    }
 }
 
 

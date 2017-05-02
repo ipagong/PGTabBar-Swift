@@ -5,11 +5,19 @@
 [![License](https://img.shields.io/cocoapods/l/PGTabBar.svg?style=flat)](http://cocoapods.org/pods/PGTabBar)
 [![Platform](https://img.shields.io/cocoapods/p/PGTabBar.svg?style=flat)](http://cocoapods.org/pods/PGTabBar)
 
+It simply provide TabContianer & protocols (tabcell, tabitem, tabindicator).
+
+You can customize tabcell, tabitem, tabindicator with protocols.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+- above ios 8.0
+- swift 3.0
+- with cocoapods
 
 ## Installation
 

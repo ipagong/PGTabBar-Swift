@@ -10,13 +10,7 @@ import UIKit
 
 open class TabCell: UICollectionViewCell, TabCellProtocol {
     
-    public weak var option: TabContainer.TabOption?
-    
-    public var tabIcon: UIImage?
-    public var tabTextLabel: UILabel { return self.tabLabel }
-    public var tabOverlayView: TabStateElement<UIView>?
-    
-    private var innerConstraints:[NSLayoutConstraint]?
+    public weak var container: TabContainer?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,30 +22,44 @@ open class TabCell: UICollectionViewCell, TabCellProtocol {
         self.setup()
     }
     
-    lazy var tabLabel:UILabel = {
+    lazy var titleLabel:UILabel = {
         let label = UILabel(frame: self.bounds)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         return label
     }()
     
-    public func updateTabCell() {
-        if innerConstraints == nil {
-            let top      = NSLayoutConstraint(item: tabLabel, attribute: .top,      relatedBy: .equal, toItem: contentView, attribute: .top,      multiplier: 1, constant: 0)
-            let bottom   = NSLayoutConstraint(item: tabLabel, attribute: .bottom,   relatedBy: .equal, toItem: contentView, attribute: .bottom,   multiplier: 1, constant: 0)
-            let leading  = NSLayoutConstraint(item: tabLabel, attribute: .leading,  relatedBy: .equal, toItem: contentView, attribute: .leading,  multiplier: 1, constant: 0)
-            let trailing = NSLayoutConstraint(item: tabLabel, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1, constant: 0)
-            innerConstraints = [top, bottom, leading, trailing]
-            addConstraints(innerConstraints!)
-            self.setNeedsUpdateConstraints()
-        }
+    lazy var maskLabel:UILabel = {
+        let label = UILabel(frame: self.bounds)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
+    
+    public func updateTabCell(_ item: TabItemProtocol?) {
+        guard let tabItem = item as? TabItem else { return }
+        
+        self.titleLabel.attributedText = self.isSelected ? tabItem.selectedTitle : tabItem.title
     }
 }
 
 extension TabCell {
     public func setup() {
         backgroundColor = .white
-        contentView.addSubview(tabLabel)
-        updateTabCell()
+        contentView.addSubview(titleLabel)
+        
+        let top      = NSLayoutConstraint(item: titleLabel, attribute: .top,      relatedBy: .equal, toItem: contentView, attribute: .top,      multiplier: 1, constant: 0)
+        let bottom   = NSLayoutConstraint(item: titleLabel, attribute: .bottom,   relatedBy: .equal, toItem: contentView, attribute: .bottom,   multiplier: 1, constant: 0)
+        let leading  = NSLayoutConstraint(item: titleLabel, attribute: .leading,  relatedBy: .equal, toItem: contentView, attribute: .leading,  multiplier: 1, constant: 0)
+        let trailing = NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1, constant: 0)
+        
+        let innerConstraints = [top, bottom, leading, trailing]
+        
+        self.backgroundColor = .yellow
+        
+        self.addConstraints(innerConstraints)
+        
+        self.setNeedsUpdateConstraints()
+        
     }
 }

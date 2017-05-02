@@ -16,19 +16,37 @@ class ViewController: UIViewController, TabContainerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabContainer.option.bounces = true
         tabContainer.indicator = TabIndicator()
+        tabContainer.option.bounces = false
+//        tabContainer.option.interItemSpacing = 3
+//        tabContainer.option.lineSpacing = 1
         tabContainer.delegate = self
         
-//        tabContainer.option.aspect = .minimum // .fitable
+        tabContainer.option.aspect = .equalbe
         
         var tabList = [TabItem]()
         
-        tabList.append(TabItem(title: TabText.title("YouTube").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
-//        tabList.append(TabItem(title: TabText.title("Facebook").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
-//        tabList.append(TabItem(title: TabText.title("Instagram").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("Twitch").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("Pinterest").boldFont(size: 18).attrText, cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("YouTube").boldFont(size: 18).attrText,
+                               selectedTitle: TabText.title("YouTube").boldFont(size: 18).color(.red).attrText,
+                               cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("Facebook").boldFont(size: 18).attrText,
+                               selectedTitle: TabText.title("Facebook").boldFont(size: 18).color(.red).attrText,
+                               cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("A").boldFont(size: 18).attrText,
+                               selectedTitle: TabText.title("A").boldFont(size: 18).color(.red).attrText,
+                               cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("Instagram").boldFont(size: 18).attrText,
+                               selectedTitle: TabText.title("Instagram").boldFont(size: 18).color(.red).attrText,
+                               cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("Twitch").boldFont(size: 18).attrText,
+                               selectedTitle: TabText.title("Twitch").boldFont(size: 18).color(.red).attrText,
+                               cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("Na").boldFont(size: 18).attrText,
+                               selectedTitle: TabText.title("Na").boldFont(size: 18).color(.red).attrText,
+                               cellClazz: MyTabCell.self ))
+        tabList.append(TabItem(title: TabText.title("Pinterest").boldFont(size: 18).attrText,
+                               selectedTitle: TabText.title("Pinterest").boldFont(size: 18).color(.red).attrText,
+                               cellClazz: MyTabCell.self ))
 
         tabContainer.tabList = tabList
         
