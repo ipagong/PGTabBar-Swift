@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PGTabBar'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Custom TabBar with container and protocols.'
 
 # This description is used to generate tags and improve search results.
@@ -27,6 +27,7 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+
 
   s.source_files = 'PGTabBar/Classes/**/*'
   

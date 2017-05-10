@@ -1,18 +1,18 @@
 {
   "name": "PGTabBar",
   "version": "0.1.0",
-  "summary": "A short description of PGTabBar.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/damon.park/PGTabBar",
+  "summary": "Custom TabBar with container and protocols.",
+  "description": "Simple Tabbar with CollectionView & Protocols",
+  "homepage": "https://github.com/ipagong/PGTabBar",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "damon.park": "damon.park@kakaocorp.com"
+    "ipagong": "ipagong.dev@gmail.com"
   },
   "source": {
-    "git": "https://github.com/damon.park/PGTabBar.git",
+    "git": "https://github.com/ipagong/PGTabBar.git",
     "tag": "0.1.0"
   },
   "platforms": {
