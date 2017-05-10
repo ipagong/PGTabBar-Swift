@@ -30,8 +30,12 @@ public class TabContainer: UIView {
     }
     
     public override func layoutSubviews() {
+
         super.layoutSubviews()
+        
         self.reloadData(animated: false)
+        
+        self.addTabConstraints()
     }
     
     fileprivate lazy var collectionView:UICollectionView = {
@@ -57,19 +61,21 @@ public class TabContainer: UIView {
     public var tabList:Array<TabItemProtocol>? {
         didSet {
             self.validTabList = self.tabList?.filter { $0.isValidTabCell() }
-            self.tabTotalWidth = self.tabList?.reduce(0) { $0 + $1.padding.left + floor($1.itemMinimumWidth) + $1.padding.right } ?? 0
+            self.minTotalWidth = self.tabList?.reduce(0) { $0 + $1.padding.left + floor($1.itemMinimumWidth) + $1.padding.right } ?? 0
             self.reloadData()
         }
     }
     
     fileprivate var validTabList:Array<TabItemProtocol>?
-    fileprivate var tabTotalWidth:CGFloat = 0
+    fileprivate var minTotalWidth:CGFloat = 0
+    fileprivate var expectedTotalWidth:CGFloat { return self.tabList?.reduce(0) { $0 + self.getSize($1).width } ?? 0 }
     fileprivate var preferredIndex:NSInteger { return delegate?.indexWithTabContainer(self) ?? 0 }
     
     fileprivate var top:NSLayoutConstraint?
     fileprivate var bottom:NSLayoutConstraint?
     fileprivate var leading:NSLayoutConstraint?
     fileprivate var trailing:NSLayoutConstraint?
+    fileprivate var centerX:NSLayoutConstraint?
     fileprivate var width:NSLayoutConstraint?
 }
 
@@ -127,13 +133,7 @@ extension TabContainer: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let item = self.validTabList?[indexPath.row] else { return .zero }
-        
-        switch option.aspect {
-        case .fitable: return fitableItemSize(item)
-        case .equalbe: return equalbeItemSize(item)
-        case .minimum: return expectItemSize(item)
-        }
-        
+        return self.getSize(item)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -152,6 +152,7 @@ extension TabContainer {
         
         self.addSubview(self.collectionView)
         self.setupConstraints()
+        self.addTabConstraints()
         
         option.collectionView = collectionView
         indicator?.container = self
@@ -162,13 +163,41 @@ extension TabContainer {
         bottom   = NSLayoutConstraint(item: collectionView, attribute: .bottom,   relatedBy: .equal, toItem: self, attribute: .bottom,   multiplier: 1, constant: 0)
         leading  = NSLayoutConstraint(item: collectionView, attribute: .leading,  relatedBy: .equal, toItem: self, attribute: .leading,  multiplier: 1, constant: 0)
         trailing = NSLayoutConstraint(item: collectionView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        centerX  = NSLayoutConstraint(item: collectionView, attribute: .centerX,  relatedBy: .equal, toItem: self, attribute: .centerX,  multiplier: 1, constant: 0)
+        width    = NSLayoutConstraint(item: collectionView, attribute: .width,    relatedBy: .equal, toItem: nil,  attribute: .notAnAttribute, multiplier: 1, constant: 0)
         
-        addConstraints([top!, bottom!, leading!, trailing!])
+        self.addConstraints([top!, bottom!, leading!, trailing!])
+    }
+    
+    fileprivate func addTabConstraints() {
+        self.removeConstraints([top!, bottom!, leading!, trailing!, centerX!])
+        self.collectionView.removeConstraint(width!)
+        
+        let expectWidth = self.expectedTotalWidth
+        
+        guard bounds.width > expectWidth else {
+            self.addConstraints([top!, bottom!, leading!, trailing!])
+            return
+        }
+        
+        self.width!.constant = expectWidth
+        
+        self.collectionView.addConstraint(width!)
+        self.addConstraints([top!, bottom!])
+        
+        switch option.alignment {
+        case .left:
+            self.addConstraint(leading!)
+        case .right:
+            self.addConstraint(trailing!)
+        case .center:
+            self.addConstraint(centerX!)
+        }
     }
     
     fileprivate func fitableItemSize(_ item: TabItemProtocol) -> CGSize {
         
-        let extraWidth:CGFloat = (self.bounds.width - self.tabTotalWidth - (CGFloat(self.validTabList!.count) * self.option.interItemSpacing))
+        let extraWidth:CGFloat = (self.bounds.width - self.minTotalWidth - (CGFloat(self.validTabList!.count) * self.option.interItemSpacing))
         
         guard extraWidth > 0 else {
             return CGSize(width: floor(item.expectedWidth), height: self.bounds.height)
@@ -186,6 +215,14 @@ extension TabContainer {
     
     fileprivate func expectItemSize(_ item: TabItemProtocol) -> CGSize {
         return CGSize(width: floor(item.expectedWidth), height: self.bounds.height)
+    }
+    
+    fileprivate func getSize(_ item: TabItemProtocol) -> CGSize {
+        switch option.aspect {
+        case .fitable: return fitableItemSize(item)
+        case .equalbe: return equalbeItemSize(item)
+        case .minimum: return expectItemSize(item)
+        }
     }
 }
 

@@ -18,35 +18,36 @@ class ViewController: UIViewController, TabContainerDelegate {
         
         tabContainer.indicator = TabIndicator()
         tabContainer.option.bounces = false
+        tabContainer.delegate = self
 //        tabContainer.option.interItemSpacing = 3
 //        tabContainer.option.lineSpacing = 1
-        tabContainer.delegate = self
         
         tabContainer.option.aspect = .equalbe
+        tabContainer.option.alignment = .center
         
         var tabList = [TabItem]()
         
         tabList.append(TabItem(title: TabText.title("YouTube").boldFont(size: 18).attrText,
                                selectedTitle: TabText.title("YouTube").boldFont(size: 18).color(.red).attrText,
-                               cellClazz: MyTabCell.self ))
+                               cellClazz: TabCell.self ))
         tabList.append(TabItem(title: TabText.title("Facebook").boldFont(size: 18).attrText,
                                selectedTitle: TabText.title("Facebook").boldFont(size: 18).color(.red).attrText,
-                               cellClazz: MyTabCell.self ))
+                               cellClazz: TabCell.self ))
         tabList.append(TabItem(title: TabText.title("A").boldFont(size: 18).attrText,
                                selectedTitle: TabText.title("A").boldFont(size: 18).color(.red).attrText,
-                               cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("Instagram").boldFont(size: 18).attrText,
-                               selectedTitle: TabText.title("Instagram").boldFont(size: 18).color(.red).attrText,
-                               cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("Twitch").boldFont(size: 18).attrText,
-                               selectedTitle: TabText.title("Twitch").boldFont(size: 18).color(.red).attrText,
-                               cellClazz: MyTabCell.self ))
+                               cellClazz: TabCell.self ))
         tabList.append(TabItem(title: TabText.title("Na").boldFont(size: 18).attrText,
                                selectedTitle: TabText.title("Na").boldFont(size: 18).color(.red).attrText,
-                               cellClazz: MyTabCell.self ))
-        tabList.append(TabItem(title: TabText.title("Pinterest").boldFont(size: 18).attrText,
-                               selectedTitle: TabText.title("Pinterest").boldFont(size: 18).color(.red).attrText,
-                               cellClazz: MyTabCell.self ))
+                               cellClazz: TabCell.self ))
+//        tabList.append(TabItem(title: TabText.title("Instagram").boldFont(size: 18).attrText,
+//                               selectedTitle: TabText.title("Instagram").boldFont(size: 18).color(.red).attrText,
+//                               cellClazz: TabCell.self ))
+//        tabList.append(TabItem(title: TabText.title("Twitch").boldFont(size: 18).attrText,
+//                               selectedTitle: TabText.title("Twitch").boldFont(size: 18).color(.red).attrText,
+//                               cellClazz: TabCell.self ))
+//        tabList.append(TabItem(title: TabText.title("Pinterest").boldFont(size: 18).attrText,
+//                               selectedTitle: TabText.title("Pinterest").boldFont(size: 18).color(.red).attrText,
+//                               cellClazz: TabCell.self ))
 
         tabContainer.tabList = tabList
         
@@ -70,10 +71,4 @@ class ViewController: UIViewController, TabContainerDelegate {
 //        
 //    }
 
-}
-
-
-
-class MyTabCell: TabCell {
-    
 }

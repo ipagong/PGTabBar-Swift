@@ -15,6 +15,8 @@ extension TabContainer {
         
         public var aspect:AspectMode = .fitable
         
+        public var alignment:Alignment = .left
+        
         public var lineSpacing:CGFloat = 0
         
         public var interItemSpacing:CGFloat = 0
@@ -33,5 +35,10 @@ extension TabContainer {
         case minimum
     }
 
+    public enum Alignment: Int {
+        case left
+        case center
+        case right
+    }
 }
 
