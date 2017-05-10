@@ -79,14 +79,3 @@ extension NSInteger {
     func indexPath(_ section:NSInteger? = 0) -> IndexPath { return IndexPath(row: self, section: section!) }
 }
 
-extension UIView {
-    func tabMaskImage() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0)
-        self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)
-        let snapshotImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return snapshotImage
-    }
-}
-
-

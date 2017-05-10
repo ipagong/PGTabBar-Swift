@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PGTabBar
 
 open class TabIndicator:UIView, TabIndicatorProtocol {
     

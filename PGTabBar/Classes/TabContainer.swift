@@ -110,7 +110,7 @@ extension TabContainer: UICollectionViewDataSource {
     }
     
     public  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let item = self.validTabList?[indexPath.row] else { return TabCell() }
+        guard let item = self.validTabList?[indexPath.row] else { return UICollectionViewCell() }
         
         let tabCell = collectionView.dequeueReusableCell(withReuseIdentifier: item.tabIdentifier, for: indexPath) as UICollectionViewCell
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PGTabBar
 
 open class TabCell: UICollectionViewCell, TabCellProtocol {
     

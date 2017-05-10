@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import PGTabBar
 
 public struct TabItem : TabItemProtocol {
+    public var tabIdentifier: String!
+
     
     public var title:NSAttributedString
     public var selectedTitle:NSAttributedString
@@ -17,11 +20,10 @@ public struct TabItem : TabItemProtocol {
         self.title = title
         self.selectedTitle = selectedTitle
         self.tabCellClazz = cellClazz
-        self.tabIdentifier = identifier ?? NSStringFromClass(tabCellClazz) as String
     }
 
     public var didSelected:Bool!
-    public var tabIdentifier:String!
+    public var tabItemKey:String!
     public var tabCellClazz:UICollectionViewCell.Type!
     public var itemMinimumWidth:CGFloat {
         return title.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude),

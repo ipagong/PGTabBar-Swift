@@ -9,6 +9,8 @@ It simply provide TabContianer & protocols (tabcell, tabitem, tabindicator).
 
 You can customize tabcell, tabitem, tabindicator with protocols.
 
+![](./PGTabBar.jpg)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
