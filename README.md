@@ -15,6 +15,8 @@ You can customize tabcell, tabitem, tabindicator with protocols.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+appetize.io demo : [\[ here \]](https://appetize.io/embed/14epxbmgw66abnmx3534nehzmg?device=iphone5s&scale=75&orientation=portrait&osVersion=9.3)
+
 ## Requirements
 
 - above ios 8.0
