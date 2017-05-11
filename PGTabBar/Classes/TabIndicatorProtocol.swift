@@ -31,3 +31,12 @@ extension TabIndicatorProtocol {
     
 }
 
+class IndexIndicator: Any, TabIndicatorProtocol {
+    
+    public weak var container: TabContainer?
+    public var selectedIndex: NSInteger = 0
+    
+    public func moveTo(cell: UICollectionViewCell, layout: UICollectionViewLayoutAttributes, item: TabItemProtocol, animated: Bool) {
+        //do nothing.
+    }
+}

@@ -49,7 +49,7 @@ extension TabItemProtocol {
 }
 
 public enum TabCellType {
-    case clazz(type: UICollectionView.Type)
+    case clazz(type: UICollectionViewCell.Type)
     case nib(nibName: String)
     
     func preloadForValidation() -> Any? {

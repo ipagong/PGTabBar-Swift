@@ -149,12 +149,13 @@ extension TabContainer: UICollectionViewDelegateFlowLayout {
 extension TabContainer {
     
     fileprivate func setupContainer() {
-        
+    
         self.addSubview(self.collectionView)
         self.setupConstraints()
         self.addTabConstraints()
         
         option.collectionView = collectionView
+        indicator = IndexIndicator()
         indicator?.container = self
     }
     

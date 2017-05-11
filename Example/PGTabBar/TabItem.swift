@@ -10,21 +10,22 @@ import Foundation
 import PGTabBar
 
 public struct TabItem : TabItemProtocol {
-    public var tabIdentifier: String!
 
-    
     public var title:NSAttributedString
     public var selectedTitle:NSAttributedString
     
     public init(title:NSAttributedString, selectedTitle:NSAttributedString, cellClazz:UICollectionViewCell.Type, identifier:String? = nil) {
         self.title = title
         self.selectedTitle = selectedTitle
-        self.tabCellClazz = cellClazz
+        self.tabCellType = .clazz(type: cellClazz)
     }
 
     public var didSelected:Bool!
+    
+    //protocol methods
     public var tabItemKey:String!
-    public var tabCellClazz:UICollectionViewCell.Type!
+    public var tabCellType: TabCellType!
+    public var tabIdentifier: String!
     public var itemMinimumWidth:CGFloat {
         return title.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude),
                                   options: [.usesLineFragmentOrigin],
