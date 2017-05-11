@@ -18,7 +18,7 @@ public protocol TabItemProtocol {
     
     var tabCellClazz:UICollectionViewCell.Type! { get set }
     
-    var tabIdentifier:String!  { get }
+    var tabIdentifier:String { get }
     
     var itemMinimumWidth:CGFloat { get }
     
