@@ -16,7 +16,7 @@ public protocol TabItemProtocol {
     
     var tabItemKey:String!  { get set }
     
-    var tabCellClazz:UICollectionViewCell.Type! { get set }
+    var tabCellType:TabCellType! { get set }
     
     var tabIdentifier:String { get }
     
@@ -30,13 +30,15 @@ public protocol TabItemProtocol {
 extension TabItemProtocol {
     
     public func isValidTabCell() -> Bool {
-        guard let _ = tabCellClazz.init() as? TabCellProtocol else { return false }
+        guard let _ = tabCellType.preloadForValidation() as? TabCellProtocol else { return false }
         return true
     }
     
     public var tabIdentifier:String {
-        guard tabCellClazz != nil else { return "TabCell" }
-        return NSStringFromClass(tabCellClazz) as String
+        switch self.tabCellType! {
+        case .clazz(let type):  return NSStringFromClass(type) as String
+        case .nib(let nibName): return nibName
+        }
     }
     
     public var itemMinimumWidth:CGFloat { return 80 }
@@ -46,4 +48,28 @@ extension TabItemProtocol {
     public var expectedWidth:CGFloat { return padding.left + itemMinimumWidth + padding.right }
 }
 
+public enum TabCellType {
+    case clazz(type: UICollectionView.Type)
+    case nib(nibName: String)
+    
+    func preloadForValidation() -> Any? {
+        switch self {
+        case .clazz(let type):
+            return type.init()
+        case .nib(let nibName):
+            guard nibName.isEmpty == false else { return nil }
+            return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil).first
+        }
+    }
+    
+    func registTabCell(_ collectionView:UICollectionView, tabIdentifier:String) {
+        switch self {
+        case .clazz(let type):
+            collectionView.register(type, forCellWithReuseIdentifier: tabIdentifier)
+            
+        case .nib(let nibName):
+            collectionView.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier: tabIdentifier)
+        }
+    }
+}
 

@@ -30,7 +30,7 @@ public class TabContainer: UIView {
     }
     
     public override func layoutSubviews() {
-
+        
         super.layoutSubviews()
         
         self.reloadData(animated: false)
@@ -52,7 +52,7 @@ public class TabContainer: UIView {
         return collectionView
     }()
     
- lazy var flowLayout:UICollectionViewFlowLayout = {
+    lazy var flowLayout:UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         return flowLayout
@@ -233,8 +233,8 @@ extension TabContainer {
         guard let _ = validTabList, validTabList!.count > 0 else { return }
         
         validTabList!
-            .flatMap { ($0.tabCellClazz, $0.tabIdentifier) }
-            .forEach { self.collectionView.register($0.0, forCellWithReuseIdentifier: $0.1) }
+            .flatMap { ($0.tabCellType, $0.tabIdentifier) }
+            .forEach { $0.0.registTabCell(collectionView, tabIdentifier: $0.1) }
         
         let reloadIndex = (self.indicator?.selectedIndex == NSNotFound ? self.preferredIndex : self.indicator?.selectedIndex)
         
@@ -249,7 +249,7 @@ extension TabContainer {
         
         self.collectionView.selectItem(at: index.indexPath(), animated: animated!, scrollPosition: .centeredHorizontally)
         self.collectionView.delegate?.collectionView!(collectionView, didSelectItemAt: index.indexPath())
-
+        
     }
 }
 
