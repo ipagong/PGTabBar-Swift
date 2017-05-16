@@ -87,14 +87,15 @@ extension TabContainer: UICollectionViewDelegate {
         guard let cell = collectionView.cellForItem(at: indexPath), let tabCell = cell as? TabCellProtocol else { return }
         
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        delegate?.didSelectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
-        
-        guard let layout = collectionView.layoutAttributesForItem(at: indexPath) else { return }
         
         tabCell.updateTabCell(item)
         
         self.indicator?.selectedIndex = indexPath.row
         self.indicator?.updateTabIndicator()
+        
+        delegate?.didSelectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
+        
+        guard let layout = collectionView.layoutAttributesForItem(at: indexPath) else { return }
         self.indicator?.moveTo(cell:cell, layout: layout, item: item, animated:true)
     }
     
