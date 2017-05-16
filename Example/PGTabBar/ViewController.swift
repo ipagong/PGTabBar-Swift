@@ -59,16 +59,18 @@ class ViewController: UIViewController, TabContainerDelegate {
         self.tabContainer.setNeedsUpdateConstraints()
     }
 
-//    func indexWithTabContainer(_ container:TabContainer) -> NSInteger? {
-//        return 0
-//    }
+/*
+    func indexWithTabContainer(_ container:TabContainer) -> NSInteger? {
+        return 0
+    }
     
-//    func didSelectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol) {
-//        
-//    }
-//    
-//    func didDeselectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol) {
-//        
-//    }
+    func didSelectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol) {
+        
+    }
+    
+    func didDeselectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol) {
+        
+    }
+ */
 
 }

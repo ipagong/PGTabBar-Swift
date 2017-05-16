@@ -18,12 +18,8 @@ public protocol TabContainerDelegate : class {
     
     func indexWithTabContainer(_ container:TabContainer) -> NSInteger?
     
-    func willSelectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol)
-    
     func didSelectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol)
-    
-    func willDeselectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol)
-    
+
     func didDeselectedTabContainer(_ container:TabContainer, index:NSInteger, item:TabItemProtocol, tabCell:TabCellProtocol)
     
 }
