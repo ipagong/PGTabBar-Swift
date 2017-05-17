@@ -13,11 +13,11 @@ public class TabContainer: UIView {
     public weak var delegate:TabContainerDelegate?
     
     public var option:TabOption = TabOption()
-    public var indicator:TabIndicatorProtocol? {
-        didSet{ indicator?.container = self }
+    public var indicator:TabIndicatorProtocol = IndexIndicator() {
+        didSet{ indicator.container = self }
     }
     
-    public var currentIndex:NSInteger { return indicator?.selectedIndex ?? NSNotFound }
+    public var currentIndex:NSInteger { return indicator.selectedIndex }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,13 +90,13 @@ extension TabContainer: UICollectionViewDelegate {
         
         tabCell.updateTabCell(item)
         
-        self.indicator?.selectedIndex = indexPath.row
-        self.indicator?.updateTabIndicator()
+        self.indicator.selectedIndex = indexPath.row
+        self.indicator.updateTabIndicator()
         
         delegate?.didSelectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
         
         guard let layout = collectionView.layoutAttributesForItem(at: indexPath) else { return }
-        self.indicator?.moveTo(cell:cell, layout: layout, item: item, animated:true)
+        self.indicator.moveTo(cell:cell, layout: layout, item: item, animated:true)
     }
     
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -156,8 +156,7 @@ extension TabContainer {
         self.addTabConstraints()
         
         option.collectionView = collectionView
-        indicator = IndexIndicator()
-        indicator?.container = self
+        indicator.container = self
     }
     
     fileprivate func setupConstraints() {
@@ -188,12 +187,9 @@ extension TabContainer {
         self.addConstraints([top!, bottom!])
         
         switch option.alignment {
-        case .left:
-            self.addConstraint(leading!)
-        case .right:
-            self.addConstraint(trailing!)
-        case .center:
-            self.addConstraint(centerX!)
+        case .left:   self.addConstraint(leading!)
+        case .right:  self.addConstraint(trailing!)
+        case .center: self.addConstraint(centerX!)
         }
     }
     
@@ -238,20 +234,20 @@ extension TabContainer {
             .flatMap { ($0.tabCellType, $0.tabIdentifier) }
             .forEach { $0.0.registTabCell(collectionView, tabIdentifier: $0.1) }
         
-        var reloadIndex = (preferredIndex ? self.preferredIndex : self.indicator?.selectedIndex ?? 0)
+        var reloadIndex = (preferredIndex ? self.preferredIndex : self.indicator.selectedIndex)
         
         reloadIndex = max(min(validTabList!.count - 1, reloadIndex), 0)
         
-        self.indicator?.selectedIndex = reloadIndex
+        self.indicator.selectedIndex = reloadIndex
         
         self.collectionView.performBatchUpdates({ self.collectionView.reloadData() }) { _ in
             self.selectAt(reloadIndex, animated: animated!)
         }
     }
     
-    public func selectAt(_ index:NSInteger, animated:Bool? = true) {
+    public func selectAt(_ index:NSInteger, animated:Bool = true) {
         
-        self.collectionView.selectItem(at: index.indexPath(), animated: animated!, scrollPosition: .centeredHorizontally)
+        self.collectionView.selectItem(at: index.indexPath(), animated: animated, scrollPosition: .centeredHorizontally)
         self.collectionView.delegate?.collectionView!(collectionView, didSelectItemAt: index.indexPath())
         
     }
