@@ -70,6 +70,7 @@ public class TabContainer: UIView {
     fileprivate var minTotalWidth:CGFloat = 0
     fileprivate var expectedTotalWidth:CGFloat { return self.tabList?.reduce(0) { $0 + self.getSize($1).width } ?? 0 }
     fileprivate var preferredIndex:NSInteger { return delegate?.indexWithTabContainer(self) ?? 0 }
+    fileprivate var selectAnimation:Bool = false
     
     fileprivate var top:NSLayoutConstraint?
     fileprivate var bottom:NSLayoutConstraint?
@@ -96,7 +97,7 @@ extension TabContainer: UICollectionViewDelegate {
         delegate?.didSelectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
         
         guard let layout = collectionView.layoutAttributesForItem(at: indexPath) else { return }
-        self.indicator.moveTo(cell:cell, layout: layout, item: item, animated:true)
+        self.indicator.moveTo(cell:cell, layout: layout, item: item, animated:selectAnimation)
     }
     
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -150,12 +151,13 @@ extension TabContainer: UICollectionViewDelegateFlowLayout {
 extension TabContainer {
     
     fileprivate func setupContainer() {
-    
+        
         self.addSubview(self.collectionView)
         self.setupConstraints()
         self.addTabConstraints()
         
         option.collectionView = collectionView
+        indicator = IndexIndicator()
         indicator.container = self
     }
     
@@ -227,7 +229,7 @@ extension TabContainer {
 //:MARK - public methods
 extension TabContainer {
     
-    public func reloadData(animated:Bool? = false, preferredIndex:Bool = false) {
+    public func reloadData(animated:Bool = false, preferredIndex:Bool = false) {
         guard let _ = validTabList, validTabList!.count > 0 else { return }
         
         validTabList!
@@ -241,15 +243,15 @@ extension TabContainer {
         self.indicator.selectedIndex = reloadIndex
         
         self.collectionView.performBatchUpdates({ self.collectionView.reloadData() }) { _ in
-            self.selectAt(reloadIndex, animated: animated!)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.selectAt(reloadIndex, animated: animated) })
         }
     }
     
     public func selectAt(_ index:NSInteger, animated:Bool = true) {
-        
+        self.selectAnimation = animated
         self.collectionView.selectItem(at: index.indexPath(), animated: animated, scrollPosition: .centeredHorizontally)
         self.collectionView.delegate?.collectionView!(collectionView, didSelectItemAt: index.indexPath())
-        
+        self.selectAnimation = true
     }
 }
 
