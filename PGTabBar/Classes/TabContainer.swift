@@ -63,6 +63,7 @@ public class TabContainer: UIView {
             self.validTabList = self.tabList?.filter { $0.isValidTabCell() }
             self.minTotalWidth = self.tabList?.reduce(0) { $0 + $1.padding.left + floor($1.itemMinimumWidth) + $1.padding.right } ?? 0
             self.reloadData()
+            self.addTabConstraints()
         }
     }
     
@@ -245,12 +246,11 @@ extension TabContainer {
         
         self.delegate?.didLoadTabContainer(self, tabCount: tabCount)
         
-        self.collectionView.performBatchUpdates({ self.collectionView.reloadData() }) { _ in
-            
-            guard tabCount > 0 else { return }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.selectAt(reloadIndex, animated: animated) })
-        }
+        self.collectionView.reloadData()
+        
+        guard tabCount > 0 else { return }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.selectAt(reloadIndex, animated: animated) })
     }
     
     public func selectAt(_ index:NSInteger, animated:Bool = true) {
