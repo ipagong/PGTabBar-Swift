@@ -230,19 +230,25 @@ extension TabContainer {
 extension TabContainer {
     
     public func reloadData(animated:Bool = false, preferredIndex:Bool = false) {
-        guard let _ = validTabList, validTabList!.count > 0 else { return }
         
-        validTabList!
+        validTabList?
             .flatMap { ($0.tabCellType, $0.tabIdentifier) }
             .forEach { $0.0.registTabCell(collectionView, tabIdentifier: $0.1) }
         
+        let tabCount = validTabList?.count ?? 0
+        
         var reloadIndex = (preferredIndex ? self.preferredIndex : self.indicator.selectedIndex)
         
-        reloadIndex = max(min(validTabList!.count - 1, reloadIndex), 0)
+        reloadIndex = max(min(tabCount - 1, reloadIndex), 0)
         
         self.indicator.selectedIndex = reloadIndex
         
+        self.delegate?.didLoadTabContainer(self, tabCount: tabCount)
+        
         self.collectionView.performBatchUpdates({ self.collectionView.reloadData() }) { _ in
+            
+            guard tabCount > 0 else { return }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.selectAt(reloadIndex, animated: animated) })
         }
     }

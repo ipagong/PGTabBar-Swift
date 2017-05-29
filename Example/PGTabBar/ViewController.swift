@@ -22,7 +22,7 @@ class ViewController: UIViewController, TabContainerDelegate {
 //        tabContainer.option.interItemSpacing = 3
 //        tabContainer.option.lineSpacing = 1
         
-        tabContainer.option.aspect = .equalbe
+        tabContainer.option.aspect = .fitable
         tabContainer.option.alignment = .center
         
         var tabList = [TabItem]()

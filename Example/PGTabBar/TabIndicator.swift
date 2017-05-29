@@ -30,7 +30,7 @@ open class TabIndicator:UIView, TabIndicatorProtocol {
             cell.superview?.addSubview(self)
         }
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: animated ? 0.3 : 0) {
             self.frame = CGRect(x: layout.frame.origin.x + 4, y: layout.frame.height - 15, width: layout.frame.width - 8, height: 2)
         }
     }
