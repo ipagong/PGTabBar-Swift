@@ -1,5 +1,5 @@
 PODS:
-  - PGTabBar (0.1.0)
+  - PGTabBar (0.2.2)
 
 DEPENDENCIES:
   - PGTabBar (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  PGTabBar: 910c560d040ba41fd611937c8a239f5b77a08ef6
+  PGTabBar: e7c6c0492734fd9fec86333878bb21a4bcf2ae3b
 
 PODFILE CHECKSUM: 68326295f644261de1bfc9e8f22121868d6dd962
 

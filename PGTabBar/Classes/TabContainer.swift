@@ -64,10 +64,7 @@ public class TabContainer: UIView {
     }
     
     public func setTabList(_ tabList:Array<TabItemProtocol>?, animated:Bool = false, preferredIndex:Bool = false) {
-        self.validTabList = tabList?.filter { $0.isValidTabCell() }
-        self.minTotalWidth = tabList?.reduce(0) { $0 + $1.padding.left + floor($1.itemMinimumWidth) + $1.padding.right } ?? 0
-        self.reloadData(animated: animated, preferredIndex: preferredIndex)
-        self.addTabConstraints()
+        self.reloadData(animated: animated, preferredIndex: preferredIndex) { tabList }
     }
     
     fileprivate var validTabList:Array<TabItemProtocol>?
@@ -233,8 +230,15 @@ extension TabContainer {
 //:MARK - public methods
 extension TabContainer {
     
+    public func reloadData(animated:Bool = false, preferredIndex:Bool = false, _ tabListClosure:() -> (Array<TabItemProtocol>?)) {
+        let tabList = tabListClosure()
+        self.validTabList = tabList?.filter { $0.isValidTabCell() }
+        self.minTotalWidth = tabList?.reduce(0) { $0 + $1.padding.left + floor($1.itemMinimumWidth) + $1.padding.right } ?? 0
+        self.reloadData(animated: animated, preferredIndex: preferredIndex)
+        self.addTabConstraints()
+    }
+    
     public func reloadData(animated:Bool = false, preferredIndex:Bool = false) {
-        
         validTabList?
             .flatMap { ($0.tabCellType, $0.tabIdentifier) }
             .forEach { $0.0.registTabCell(collectionView, tabIdentifier: $0.1) }
