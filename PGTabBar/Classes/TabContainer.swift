@@ -59,12 +59,15 @@ public class TabContainer: UIView {
     }()
     
     public var tabList:Array<TabItemProtocol>? {
-        didSet {
-            self.validTabList = self.tabList?.filter { $0.isValidTabCell() }
-            self.minTotalWidth = self.tabList?.reduce(0) { $0 + $1.padding.left + floor($1.itemMinimumWidth) + $1.padding.right } ?? 0
-            self.reloadData()
-            self.addTabConstraints()
-        }
+        set { self.setTabList(newValue) }
+        get { return validTabList }
+    }
+    
+    public func setTabList(_ tabList:Array<TabItemProtocol>?, animated:Bool = false, preferredIndex:Bool = false) {
+        self.validTabList = tabList?.filter { $0.isValidTabCell() }
+        self.minTotalWidth = tabList?.reduce(0) { $0 + $1.padding.left + floor($1.itemMinimumWidth) + $1.padding.right } ?? 0
+        self.reloadData(animated: animated, preferredIndex: preferredIndex)
+        self.addTabConstraints()
     }
     
     fileprivate var validTabList:Array<TabItemProtocol>?
