@@ -10,7 +10,6 @@ import UIKit
 import PGTabBar
 
 class ViewController: UIViewController, TabContainerDelegate {
-    
     @IBOutlet weak var tabContainer: TabContainer!
 
     override func viewDidLoad() {

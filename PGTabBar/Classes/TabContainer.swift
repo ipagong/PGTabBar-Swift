@@ -71,6 +71,7 @@ public class TabContainer: UIView {
     fileprivate var minTotalWidth:CGFloat = 0
     fileprivate var expectedTotalWidth:CGFloat { return self.tabList?.reduce(0) { $0 + self.getSize($1).width } ?? 0 }
     fileprivate var preferredIndex:NSInteger { return delegate?.indexWithTabContainer(self) ?? 0 }
+    fileprivate var reloaded:Bool = false
     fileprivate var selectAnimation:Bool = false
     
     fileprivate var top:NSLayoutConstraint?
@@ -96,6 +97,8 @@ extension TabContainer: UICollectionViewDelegate {
         self.indicator.updateTabIndicator()
         
         delegate?.didSelectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
+        
+        print("istracking \(collectionView.isTracking)")
         
         guard let layout = collectionView.layoutAttributesForItem(at: indexPath) else { return }
         self.indicator.moveTo(cell:cell, layout: layout, item: item, animated:selectAnimation)
@@ -262,9 +265,11 @@ extension TabContainer {
     
     public func selectAt(_ index:NSInteger, animated:Bool = true) {
         self.selectAnimation = animated
+        self.reloaded = true
         self.collectionView.selectItem(at: index.indexPath(), animated: animated, scrollPosition: .centeredHorizontally)
         self.collectionView.delegate?.collectionView!(collectionView, didSelectItemAt: index.indexPath())
         self.selectAnimation = true
+        self.reloaded = false
     }
 }
 
