@@ -67,11 +67,12 @@ public class TabContainer: UIView {
         self.reloadData(animated: animated, preferredIndex: preferredIndex) { tabList }
     }
     
+    public var reloaded:Bool = false
+    
     fileprivate var validTabList:Array<TabItemProtocol>?
     fileprivate var minTotalWidth:CGFloat = 0
     fileprivate var expectedTotalWidth:CGFloat { return self.tabList?.reduce(0) { $0 + self.getSize($1).width } ?? 0 }
     fileprivate var preferredIndex:NSInteger { return delegate?.indexWithTabContainer(self) ?? 0 }
-    fileprivate var reloaded:Bool = false
     fileprivate var selectAnimation:Bool = false
     
     fileprivate var top:NSLayoutConstraint?
@@ -242,6 +243,9 @@ extension TabContainer {
     }
     
     public func reloadData(animated:Bool = false, preferredIndex:Bool = false) {
+        
+        self.reloaded = true
+        
         validTabList?
             .flatMap { ($0.tabCellType, $0.tabIdentifier) }
             .forEach { $0.0.registTabCell(collectionView, tabIdentifier: $0.1) }
@@ -258,7 +262,10 @@ extension TabContainer {
         
         self.collectionView.reloadData()
         
-        guard tabCount > 0 else { return }
+        guard tabCount > 0 else {
+            self.reloaded = false
+            return
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.selectAt(reloadIndex, animated: animated) })
     }
