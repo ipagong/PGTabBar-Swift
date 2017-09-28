@@ -22,6 +22,7 @@ open class TabIndicator:UIView, TabIndicatorProtocol {
     //MARK: - TabIndicatorProtocol
     public weak var container: TabContainer?
     
+    public var selectedKey: String = ""
     public var selectedIndex:NSInteger = 0
     
     public func moveTo(cell:UICollectionViewCell, layout:UICollectionViewLayoutAttributes, item:TabItemProtocol, animated:Bool = false) {

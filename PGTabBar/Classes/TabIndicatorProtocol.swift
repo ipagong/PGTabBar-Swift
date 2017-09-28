@@ -17,6 +17,8 @@ public protocol TabIndicatorProtocol {
     
     weak var container:TabContainer? { get set }
     
+    var selectedKey:String { get set }
+    
     var selectedIndex:NSInteger { get set }
     
     func moveTo(cell:UICollectionViewCell, layout:UICollectionViewLayoutAttributes, item:TabItemProtocol, animated:Bool)
@@ -32,8 +34,9 @@ extension TabIndicatorProtocol {
 }
 
 class IndexIndicator: Any, TabIndicatorProtocol {
-    
+
     public weak var container: TabContainer?
+    public var selectedKey: String = ""
     public var selectedIndex: NSInteger = 0
     
     public func moveTo(cell: UICollectionViewCell, layout: UICollectionViewLayoutAttributes, item: TabItemProtocol, animated: Bool) {

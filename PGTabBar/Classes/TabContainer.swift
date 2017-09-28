@@ -94,15 +94,15 @@ extension TabContainer: UICollectionViewDelegate {
         
         tabCell.updateTabCell(item)
         
+        self.indicator.selectedKey = item.tabItemKey
         self.indicator.selectedIndex = indexPath.row
         self.indicator.updateTabIndicator()
         
+        if let layout = collectionView.layoutAttributesForItem(at: indexPath) {
+            self.indicator.moveTo(cell:cell, layout: layout, item: item, animated:selectAnimation)
+        }
+        
         delegate?.didSelectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
-        
-        print("istracking \(collectionView.isTracking)")
-        
-        guard let layout = collectionView.layoutAttributesForItem(at: indexPath) else { return }
-        self.indicator.moveTo(cell:cell, layout: layout, item: item, animated:selectAnimation)
     }
     
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -111,6 +111,8 @@ extension TabContainer: UICollectionViewDelegate {
         guard let cell = collectionView.cellForItem(at: indexPath), let tabCell = cell as? TabCellProtocol else { return }
         
         tabCell.updateTabCell(item)
+        
+        self.indicator.selectedKey = ""
         
         delegate?.didDeselectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
     }
