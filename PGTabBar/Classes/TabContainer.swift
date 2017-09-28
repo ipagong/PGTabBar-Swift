@@ -92,8 +92,6 @@ extension TabContainer: UICollectionViewDelegate {
         
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         
-        tabCell.updateTabCell(item)
-        
         self.indicator.selectedKey = item.tabItemKey
         self.indicator.selectedIndex = indexPath.row
         self.indicator.updateTabIndicator()
@@ -101,6 +99,8 @@ extension TabContainer: UICollectionViewDelegate {
         if let layout = collectionView.layoutAttributesForItem(at: indexPath) {
             self.indicator.moveTo(cell:cell, layout: layout, item: item, animated:selectAnimation)
         }
+        
+        tabCell.updateTabCell(item)
         
         delegate?.didSelectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
     }
@@ -110,9 +110,9 @@ extension TabContainer: UICollectionViewDelegate {
         guard let item = self.validTabList?[indexPath.row] else { return }
         guard let cell = collectionView.cellForItem(at: indexPath), let tabCell = cell as? TabCellProtocol else { return }
         
-        tabCell.updateTabCell(item)
-        
         self.indicator.selectedKey = ""
+        
+        tabCell.updateTabCell(item)
         
         delegate?.didDeselectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
     }
