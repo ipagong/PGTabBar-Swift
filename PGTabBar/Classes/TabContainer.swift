@@ -134,6 +134,12 @@ extension TabContainer: UICollectionViewDataSource {
             tabType.updateTabCell(item)
         }
         
+        if indexPath.row == self.indicator.selectedIndex, let layout = collectionView.layoutAttributesForItem(at: indexPath) {
+            self.indicator.selectedKey = item.tabItemKey
+            self.indicator.updateTabIndicator()
+            self.indicator.moveTo(cell:tabCell, layout: layout, item: item, animated:false)
+        }
+        
         return tabCell
     }
 }
@@ -240,8 +246,8 @@ extension TabContainer {
         let tabList = tabListClosure()
         self.validTabList = tabList?.filter { $0.isValidTabCell() }
         self.minTotalWidth = tabList?.reduce(0) { $0 + $1.padding.left + floor($1.itemMinimumWidth) + $1.padding.right } ?? 0
-        self.reloadData(animated: animated, preferredIndex: preferredIndex)
         self.addTabConstraints()
+        self.reloadData(animated: animated, preferredIndex: preferredIndex)
     }
     
     public func reloadData(animated:Bool = false, preferredIndex:Bool = false) {

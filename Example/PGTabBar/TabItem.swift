@@ -16,6 +16,7 @@ public struct TabItem : TabItemProtocol {
     
     public init(title:NSAttributedString, selectedTitle:NSAttributedString, cellClazz:UICollectionViewCell.Type, identifier:String? = nil) {
         self.title = title
+        self.tabItemKey = title.string
         self.selectedTitle = selectedTitle
         self.tabCellType = .clazz(type: cellClazz)
     }
