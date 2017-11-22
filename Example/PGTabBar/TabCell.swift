@@ -40,7 +40,7 @@ open class TabCell: UICollectionViewCell, TabCellProtocol {
     public func updateTabCell(_ item: TabItemProtocol?) {
         guard let tabItem = item as? TabItem else { return }
         
-        self.titleLabel.attributedText = self.isSelected ? tabItem.selectedTitle : tabItem.title
+        self.titleLabel.attributedText = tabItem.tabSelected ? tabItem.selectedTitle : tabItem.title
     }
 }
 

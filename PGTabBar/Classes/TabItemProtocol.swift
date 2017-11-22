@@ -20,11 +20,14 @@ public protocol TabItemProtocol {
     
     var tabIdentifier:String { get }
     
+    var tabSelected:Bool { get set }
+    
     var itemMinimumWidth:CGFloat { get }
     
     var padding:UIEdgeInsets { get }
     
     var expectedWidth:CGFloat { get }
+    
 }
 
 extension TabItemProtocol {

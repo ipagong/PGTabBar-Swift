@@ -10,9 +10,10 @@ import Foundation
 import PGTabBar
 
 public struct TabItem : TabItemProtocol {
-
+    
     public var title:NSAttributedString
     public var selectedTitle:NSAttributedString
+    public var tabSelected: Bool = false
     
     public init(title:NSAttributedString, selectedTitle:NSAttributedString, cellClazz:UICollectionViewCell.Type, identifier:String? = nil) {
         self.title = title

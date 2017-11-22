@@ -87,10 +87,12 @@ extension TabContainer: UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let item = self.validTabList?[indexPath.row] else { return }
+        guard var item = self.validTabList?[indexPath.row] else { return }
         guard let cell = collectionView.cellForItem(at: indexPath), let tabCell = cell as? TabCellProtocol else { return }
         
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        
+        item.tabSelected = true
         
         self.indicator.selectedKey = item.tabItemKey
         self.indicator.selectedIndex = indexPath.row
@@ -107,8 +109,10 @@ extension TabContainer: UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        guard let item = self.validTabList?[indexPath.row] else { return }
+        guard var item = self.validTabList?[indexPath.row] else { return }
         guard let cell = collectionView.cellForItem(at: indexPath), let tabCell = cell as? TabCellProtocol else { return }
+        
+        item.tabSelected = false
         
         self.indicator.selectedKey = ""
         
@@ -125,9 +129,11 @@ extension TabContainer: UICollectionViewDataSource {
     }
     
     public  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let item = self.validTabList?[indexPath.row] else { return UICollectionViewCell() }
+        guard var item = self.validTabList?[indexPath.row] else { return UICollectionViewCell() }
         
         let tabCell = collectionView.dequeueReusableCell(withReuseIdentifier: item.tabIdentifier, for: indexPath) as UICollectionViewCell
+        
+        item.tabSelected = (indexPath.row == self.indicator.selectedIndex)
         
         if var tabType = tabCell as? TabCellProtocol {
             tabType.container = self
