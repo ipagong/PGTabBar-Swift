@@ -102,9 +102,9 @@ extension TabContainer: UICollectionViewDelegate {
             self.indicator.moveTo(cell:cell, layout: layout, item: item, animated:selectAnimation)
         }
         
-        tabCell.updateTabCell(item)
-        
         delegate?.didSelectedTabContainer(self, index: indexPath.row, item: item, tabCell: tabCell)
+        
+        collectionView.reloadData()
     }
     
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
